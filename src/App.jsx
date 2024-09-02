@@ -1,12 +1,14 @@
-
-
+import Header from "./components/Header/Header";
+import styles from "./App.module.scss";
+import ListContainer from "./components/ListContainer/ListContainer";
 
 function App() {
-  
-
   return (
-    <div>uhkuvhh v</div>
-  )
+    <div className={styles.container}>
+      <Header />
+      <ListContainer />
+    </div>
+  );
 }
 
-export default App
+export default App;

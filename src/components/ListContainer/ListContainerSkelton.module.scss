@@ -1,0 +1,44 @@
+.containerSkeleton {
+  .headingSkeleton,
+  .seachSkeleton,
+  .listSkeleton {
+    background: #eee;
+    background: linear-gradient(90deg, #ececec 0px, #f4f4f4 40px, #ececec 80px);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    -webkit-animation: 1.5s shine linear infinite;
+    animation: shine-loading-image 2s infinite ease-out;
+  }
+  .headingSkeleton {
+    margin: 50px 0 30px;
+    height: 27px;
+    width: 40%;
+  }
+
+  .seachSkeleton {
+    margin: 0 0 15px;
+    height: 39px;
+    width: 30%;
+  }
+
+  .listSkeleton {
+    list-style: none;
+    margin: 0 0 50px;
+    padding: 0;
+    border: 1px solid #ccc;
+    li {
+      border-bottom: 1px solid #ccc;
+      height: 67px;
+    }
+  }
+}
+
+@keyframes shine-loading-image {
+  0% {
+    background-position: -32px;
+  }
+  40%,
+  100% {
+    background-position: 208px;
+  }
+}
