@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Header.module.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosHelpCircleOutline } from "react-icons/io";
-import { useState } from "react";
 
 function Header() {
   const [dropMenu, setDropMenu] = useState(false);
+
+  // Initialize menuref as a ref object
+  const menuref = useRef(null);
+
+  useEffect(() => {
+    let handler = (e) => {
+      // Close the dropdown menu if the user clicks outside of it
+      if (!menuref.current.contains(e.target)) {
+        setDropMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []); // Empty dependency array ensures this effect only runs on mount/unmount
 
   return (
     <div className={styles.headerContainer}>
@@ -30,9 +46,9 @@ function Header() {
             <a href="">Contact Us</a>
           </li>
         </ul>
-        <div className={styles.dropDownMenu}>
+        <div className={styles.dropDownMenu} ref={menuref}>
           <span
-            className={`${styles.menuIcon}`}
+            className={styles.menuIcon}
             onClick={() => {
               setDropMenu(!dropMenu);
             }}

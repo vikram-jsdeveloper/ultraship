@@ -17,9 +17,7 @@ function ListContainer() {
     setFilterStudentList(dataJson.users);
   };
   useEffect(() => {
-    setTimeout(() => {
-      fetchData();
-    }, 2000);
+    fetchData();
   }, []);
   return studentData.length === 0 ? (
     <ListContainerSkelton />
