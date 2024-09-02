@@ -12,7 +12,10 @@ function Header() {
     <div className={styles.headerContainer}>
       <div className={styles.logoContainer}>
         <a href="./">
-          <img src="./src/assets/shipxtms_logo.jpeg" className={styles.logo} />
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4E0BAQEWXlMFR1jtsA/company-logo_100_100/company-logo_100_100/0/1715955229416/shipxtms_logo?e=1733356800&v=beta&t=Iu9rKLNsmPs4ULEbExdbxWs-yeRYp13P1g-KMvkbqfc"
+            className={styles.logo}
+          />
         </a>
       </div>
       <div className={styles.menuContainer}>
