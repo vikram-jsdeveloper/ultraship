@@ -24,7 +24,12 @@ function List(props) {
   return (
     <>
       <li className={`${styles.list} ${openlist ? styles.open : ""}`}>
-        <div className={styles.upperBox}>
+        <div
+          className={styles.upperBox}
+          onClick={() => {
+            setOpenList(!openlist);
+          }}
+        >
           <span className={styles.listAvatarBox}>
             <img src={image} className={styles.listAvatarImg} />
           </span>
@@ -35,12 +40,7 @@ function List(props) {
           <span className={styles.editIcon}>
             <BiEditAlt />
           </span>
-          <span
-            className={styles.chevronIcon}
-            onClick={() => {
-              setOpenList(!openlist);
-            }}
-          >
+          <span className={styles.chevronIcon}>
             {openlist ? <FaChevronUp /> : <FaChevronDown />}
           </span>
         </div>
